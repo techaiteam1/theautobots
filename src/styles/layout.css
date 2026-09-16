@@ -1,0 +1,140 @@
+/* Header stays in the viewport; center links have their own centered anchor. */
+.site-header { position: fixed; inset: 0 0 auto; padding: var(--header-top) var(--header-inset); height: 81px; z-index: var(--layer-header); display: flex; align-items: center; justify-content: space-between; }
+.brand-link { font-size: 11.52px; font-weight: 600; letter-spacing: 0.3em; text-transform: uppercase; white-space: nowrap; }
+.brand-link img { width: 142px; height: 25px; object-fit: contain; object-position: left center; }
+.desktop-nav { position: absolute; left: 50%; translate: -50% 0; display: flex; gap: 32px; }
+.desktop-nav a { position: relative; font-size: 14.4px; color: var(--color-secondary); transition: color 0.3s var(--ease-settle); }
+.desktop-nav a:hover, .desktop-nav a[aria-current] { color: var(--color-accent); }
+.nav-dot { position: absolute; left: calc(50% - 2px); bottom: -11px; width: 4px; height: 4px; border-radius: 50%; background: var(--color-accent); opacity: 0; transform: scale(0.5); transition: opacity 0.25s, transform 0.35s var(--ease-settle); }
+[aria-current] .nav-dot { opacity: 1; transform: scale(1); }
+.header-controls { display: flex; align-items: center; gap: 13px; font-size: 11px; }
+.control-divider { color: var(--color-line); }
+.language { color: var(--color-secondary); }
+.menu-toggle { display: flex; align-items: center; gap: 8px; min-height: 32px; font-size: 11.5px; }
+.menu-toggle span { color: var(--color-accent); font-size: 15px; }
+
+/* The name width is fitted from its actual font metrics by useFitText. */
+.hero-stage { display: flex; justify-content: center; align-items: center; text-align: center; }
+.hero-composition { width: 100%; display: flex; align-items: center; flex-direction: column; }
+.hero-title-line { max-width: 100%; }
+.hero-title-line h1 { display: inline-block; width: max-content; font-family: var(--font-heading); font-size: 11vw; font-weight: var(--font-weight-display); text-transform: uppercase; line-height: 0.95; letter-spacing: 0.04em; white-space: nowrap; color: var(--color-display); }
+.hero-descriptor { margin-top: 24px; display: flex; justify-content: center; align-items: center; flex-wrap: wrap; gap: 0; font-size: clamp(9.92px, 1.4vw, 13.12px); line-height: 1.4; text-transform: uppercase; letter-spacing: 0.42em; color: var(--color-secondary); }
+.descriptor-dot { padding: 0 12px; }
+.hero-tagline { margin-top: 16px; font-family: var(--font-editorial); font-style: italic; font-size: clamp(17.92px, 2.4vw, 22.4px); line-height: 1.3; color: var(--color-secondary); }
+.scroll-cue { position: absolute; bottom: 25px; left: 50%; translate: -50% 0; width: 44px; height: 44px; display: grid; place-items: center; }
+.scroll-cue span { width: 10px; height: 10px; rotate: 45deg; border-right: 1px solid var(--color-muted); border-bottom: 1px solid var(--color-muted); }
+.scroll-cue:hover span { border-color: var(--color-accent); }
+
+/* Peripheral typography leaves the central scene unobstructed. */
+.motion .capability-group { position: absolute; inset: 0; }
+.motion .floating-word { position: absolute; left: var(--x); top: var(--y); translate: -50% -50%; white-space: nowrap; visibility: hidden; }
+.word-primary { font-family: var(--font-editorial); font-style: italic; font-size: clamp(28px, 5.4vw, 68.32px); font-weight: 400; line-height: 1.1; color: var(--color-accent); }
+.word-secondary { font-size: clamp(20px, 2.4vw, 34.56px); font-weight: 500; line-height: 1.3; color: var(--color-text); }
+.word-mark { display: flex; align-items: center; gap: 10px; color: var(--color-secondary); font-size: 10px; letter-spacing: 0.12em; }
+.word-mark i { width: 24px; height: 32px; border: 1px solid var(--color-secondary); transform: skewY(-25deg); }
+.word-mark i::after { content: ''; display: block; width: 100%; height: 100%; border: 1px solid var(--color-secondary); translate: 6px -5px; }
+
+/* Alternating single-panel stage. Placement and animation have separate wrappers. */
+.stage-heading { position: absolute; left: 17%; top: 23%; translate: -50% -50%; font-family: var(--font-editorial); font-style: italic; font-size: clamp(28px, 5.1vw, 54.72px); font-weight: 400; }
+.panel-slot { position: absolute; top: 0; width: 40%; height: 100%; display: flex; align-items: center; }
+.panel-left { left: 7%; }
+.panel-right { left: 53%; }
+.system-panel { width: 100%; pointer-events: auto; }
+.system-card { display: block; position: relative; width: 100%; }
+.media-frame { width: 100%; position: relative; overflow: hidden; }
+.media-frame > img { width: 100%; height: auto; object-fit: cover; }
+.media-frame .media-alternate { position: absolute; inset: 0; height: 100%; opacity: 0; }
+.media-shade { position: absolute; inset: 35% 0 0; background: linear-gradient(transparent, color-mix(in srgb, var(--color-overlay) 84%, transparent) 45%, color-mix(in srgb, var(--color-overlay) 93%, transparent)); }
+.frame-corner { position: absolute; width: 17px; height: 17px; border-color: var(--color-accent); border-style: solid; opacity: 0.8; pointer-events: none; }
+.top-left { top: 0; left: 0; border-width: 1px 0 0 1px; }
+.top-right { top: 0; right: 0; border-width: 1px 1px 0 0; }
+.bottom-left { bottom: 0; left: 0; border-width: 0 0 1px 1px; }
+.bottom-right { bottom: 0; right: 0; border-width: 0 1px 1px 0; }
+.system-caption { position: absolute; left: 20px; right: 20px; bottom: 20px; }
+.system-eyebrow { font-size: 10px; line-height: 1.4; letter-spacing: 0.09em; text-transform: uppercase; color: var(--color-secondary); margin-bottom: 6px; }
+.system-eyebrow:empty { display: none; }
+.system-caption h3 { font-family: var(--font-editorial); font-size: clamp(28px, 2.4vw, 38px); font-style: italic; font-weight: 400; line-height: 1.1; margin-bottom: 8px; }
+.system-description { font-size: 14.4px; line-height: 1.5; font-weight: 300; color: var(--color-secondary); }
+.touch-link { display: none; }
+.system-card:focus-visible { outline-offset: 8px; }
+.system-card:hover .frame-corner { opacity: 1; }
+
+/* The final contact is deliberately spare. */
+.philosophy-line { position: fixed; inset: 45% 15% auto; text-align: center; z-index: var(--layer-content); font: italic clamp(24px, 3.5vw, 46px)/1.15 var(--font-editorial); opacity: 0; visibility: hidden; pointer-events: none; }
+.contact-stage { display: flex; align-items: center; justify-content: center; text-align: center; padding: 80px 32px; }
+.contact-inner { max-width: 100%; }
+.contact-inner h2 { font-family: var(--font-editorial); font-size: clamp(22.4px, 3.6vw, 43.68px); font-style: italic; font-weight: 400; line-height: 1.3; margin-bottom: 32px; color: var(--color-secondary); }
+.contact-address { font-family: var(--font-heading); font-size: clamp(22.4px, 5.4vw, 68.32px); font-weight: 700; letter-spacing: -0.025em; line-height: 1.35; max-width: 100%; overflow-wrap: anywhere; transition: color 0.3s; user-select: text; }
+.contact-address:hover { color: var(--color-primary); }
+.copy-feedback { margin-top: 8px; min-height: 16px; font-size: 10.56px; line-height: 1.5; letter-spacing: 0.1em; color: var(--color-muted); }
+.contact-links { display: flex; justify-content: center; flex-wrap: wrap; gap: 12px 24px; margin-top: 24px; font-size: 10.56px; line-height: 1.5; letter-spacing: 0.22em; text-transform: uppercase; color: var(--color-secondary); }
+.contact-links a:hover { color: var(--color-accent); }
+.site-footer { position: absolute; bottom: 24px; left: 32px; right: 32px; display: flex; justify-content: center; align-items: center; flex-wrap: wrap; gap: 8px 20px; font-size: 9px; letter-spacing: 0.2em; line-height: 1.6; text-transform: uppercase; color: var(--color-muted); }
+.motion-toggle { width: 32px; height: 32px; font-size: 13px; }
+
+@media (max-width: 900px) {
+  .stage-heading { left: 50%; top: auto; bottom: 6%; translate: -50% 0; font: 500 13.6px/1.3 var(--font-body); text-transform: uppercase; letter-spacing: 0.32em; }
+  .system-eyebrow { font-size: 9px; }
+  .system-caption { left: 16px; right: 16px; bottom: 16px; }
+}
+@media (max-width: 767px) {
+  .site-header { height: 73px; }
+  .brand-link { font-size: 10.5px; letter-spacing: 0.24em; }
+  .desktop-nav { display: none; }
+  .header-controls { gap: 9px; }
+  .menu-toggle { min-height: 44px; }
+  .hero-descriptor { max-width: 176px; letter-spacing: 0.32em; line-height: 1.45; }
+  .hero-descriptor > span:last-child { flex-basis: 100%; }
+  .hero-descriptor > span:last-child .descriptor-dot { display: none; }
+  .descriptor-dot { padding: 0 10px; }
+  .motion .floating-word { left: var(--mx); top: var(--my); }
+  .word-primary { font-size: 28px; }
+  .word-secondary { font-size: 20px; }
+  .word-mark i { width: 15px; height: 23px; }
+  .panel-slot { top: auto; bottom: 6.5%; left: 50%; translate: -50% 0; width: min(85%, 560px); height: auto; display: block; }
+  .system-caption { position: relative; inset: auto; padding-top: 18px; }
+  .system-caption h3 { font-size: 30.4px; }
+  .system-description { font-size: 16px; line-height: 1.6; }
+  .system-eyebrow { font-size: 10px; margin-bottom: 7px; }
+  .media-shade { display: none; }
+  a.system-card h3::after { content: '↗'; font-family: var(--font-body); font-style: normal; font-size: 15px; margin-left: 10px; color: var(--color-accent); }
+  .contact-stage { padding-inline: 24px; }
+  .contact-inner h2 { max-width: 310px; margin-inline: auto; }
+  .contact-address { font-size: clamp(19px, 5.65vw, 32px); }
+  .site-footer { left: 24px; right: 24px; gap: 3px 10px; letter-spacing: 0.14em; font-size: 8px; }
+  .footer-note { flex-basis: 100%; order: 3; }
+}
+@media (max-height: 620px) and (max-width: 767px) {
+  .panel-slot { bottom: 5%; width: min(82%, 460px); }
+  .system-card { display: grid; grid-template-columns: 40% 1fr; gap: 18px; align-items: center; }
+  .system-caption { padding: 0; }
+  .system-caption h3 { font-size: 24px; }
+  .system-description { font-size: 12px; }
+}
+
+/* Reduced motion is a readable native document, with the same visual vocabulary. */
+.reduced .scroll-track { display: none; }
+.reduced .scene { opacity: 0.2; }
+.reduced .stage { position: relative; min-height: 100svh; scroll-margin-top: 80px; }
+.reduced .hero-stage { height: 100svh; }
+.reduced .about-stage { padding: 120px 8vw; }
+.reduced .approach-introduction { max-width: 750px; margin-bottom: 80px; }
+.reduced .approach-introduction h2 { font: italic clamp(36px, 5vw, 68px)/1.1 var(--font-editorial); margin-bottom: 24px; }
+.reduced .approach-introduction p { max-width: 560px; color: var(--color-secondary); line-height: 1.7; }
+.reduced .capabilities { display: grid; gap: 32px; }
+.reduced .capability-group { display: flex; flex-wrap: wrap; gap: 10px 32px; align-items: baseline; }
+.reduced .word-primary { font-size: clamp(32px, 4vw, 60px); }
+.reduced .word-secondary { font-size: 16px; }
+.reduced .word-mark { display: none; }
+.reduced .systems-stage { padding: 100px 7vw; }
+.reduced .stage-heading { position: static; translate: none; font: italic 54px/1 var(--font-editorial); letter-spacing: normal; text-transform: none; margin-bottom: 80px; }
+.reduced .panel-slot { position: relative; inset: auto; translate: none; width: min(65%, 760px); height: auto; margin-bottom: 120px; }
+.reduced .panel-right { margin-left: auto; }
+.reduced .philosophy-line { position: relative; inset: auto; visibility: visible; opacity: 1; padding: 100px 10vw; }
+.reduced .contact-stage { min-height: 100svh; }
+.reduced .motion-toggle { display: none; }
+@media (max-width: 767px) {
+  .reduced .panel-slot { width: 100%; margin-bottom: 80px; }
+  .reduced .about-stage { padding-inline: 7.5vw; }
+  .reduced .contact-inner h2 { max-width: none; }
+}

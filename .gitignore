@@ -1,0 +1,11 @@
+/node_modules/
+/dist/
+*.tsbuildinfo
+/.env.local
+/docs/qa/*.json
+/docs/qa/screenshots/
+/docs/inspection/evidence/
+/docs/llm-context/.obsidian/workspace*.json
+/docs/llm-context/.obsidian/appearance.json
+/docs/llm-context/.obsidian/core-plugins.json
+/docs/llm-context/.obsidian/graph.json

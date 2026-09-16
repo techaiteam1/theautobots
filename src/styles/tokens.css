@@ -1,0 +1,28 @@
+/* The theme: change colors and type here, without changing any component. */
+:root {
+  color-scheme: dark;
+  --color-background: #0a0b0b;
+  --color-text: #f1f3f1;
+  --color-primary: #a9e6cd;
+  --color-secondary: #bbc4bf;
+  --color-accent: #40dda7;
+  --color-muted: #929b95;
+  --color-display: #989e9a;
+  --color-line: #29342e;
+  --color-overlay: #080b09;
+
+  --font-heading: 'Manrope Variable', Arial, sans-serif;
+  --font-body: 'Manrope Variable', Arial, sans-serif;
+  --font-editorial: 'Instrument Serif', Georgia, serif;
+  --font-weight-display: 800;
+
+  --header-inset: 48px;
+  --header-top: 28px;
+  --ease-settle: cubic-bezier(0.22, 1, 0.36, 1);
+  --layer-scene: 0;
+  --layer-content: 2;
+  --layer-header: 20;
+  --layer-menu: 25;
+  --layer-intro: 40;
+  --layer-cursor: 50;
+}

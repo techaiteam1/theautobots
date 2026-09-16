@@ -83,3 +83,13 @@ node docs/qa/verify-details.cjs
 ```
 
 Use `--quick` on the first script for the 1440/390 pair. The scripts write evidence under this directory. The first also renders the original social-preview SVG into its PNG; rebuild after changing that artwork. No QA dependency or inspection screenshot is bundled into the website.
+
+## Public deployment verification
+
+GitHub Pages deployment run `35084959426` completed successfully on 16 September 2026. The public origin is `https://techaiteam1.github.io/theautobots/`.
+
+- Homepage, JavaScript, CSS, favicon, social image, representative media, robots.txt, and sitemap returned HTTP 200 over HTTPS.
+- The deployed title and canonical URL matched configuration.
+- Desktop 1440x900 and mobile 390x844 Chromium smoke tests reported no browser, console, or failed-request errors.
+- Both deployed viewports completed the intro, rendered the Canvas scene, opened the menu, and had no horizontal overflow.
+- The Pages workflow runs on every push to `main` and can also be started manually.

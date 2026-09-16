@@ -2,6 +2,8 @@
 
 A React + TypeScript + Vite website with independently authored GSAP motion, a lightweight particle scene, and editable brand/content configuration.
 
+Live website: <https://techaiteam1.github.io/theautobots/>
+
 The design follows the measured composition and interaction approach of [Milan Compain's reference](https://milancompain.com/): oversized typography, one continuous dark scene, peripheral words, alternating single-panel displays, and a quiet contact screen. The implementation, linked-rail motif, illustrations, and copy are original. See [the reference specification](docs/reference-analysis.md).
 
 ## Run locally
@@ -24,6 +26,8 @@ npm run preview -- --port 4173
 ```
 
 Production preview: <http://127.0.0.1:4173/>. Deploy only `dist/` to a static host. The inspection and QA screenshots in `docs/` are not part of the build.
+
+Pushes to `main` automatically build and deploy through `.github/workflows/deploy-pages.yml`.
 
 There is no backend, CMS, tracking, third-party API, or runtime font CDN dependency. Copying the email address uses the browser clipboard; the separate email link works without clipboard access. Clipboard access requires HTTPS or localhost.
 

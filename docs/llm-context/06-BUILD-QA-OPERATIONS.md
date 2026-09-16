@@ -48,6 +48,7 @@ Use `--quick` with `verify-site.cjs` for only 1440x900 and 390x844 during iterat
 - Menu Escape, focus trap, destination navigation, identity return-home, email copy, pause, reduced motion, and story image loading passed.
 - Named reference/implementation desktop/mobile screenshots exist under `docs/qa/screenshots/`.
 - A local headless motion diagnostic varied between about 16.7 ms and 33.3 ms frame intervals, with no interval over 50 ms. This is not a physical-device guarantee.
+- The GitHub Pages homepage and critical assets returned HTTP 200, and deployed desktop/mobile Chromium smoke tests passed without browser errors or overflow.
 
 ## Asset reliability
 

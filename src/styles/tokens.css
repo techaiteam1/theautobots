@@ -1,15 +1,16 @@
 /* The theme: change colors and type here, without changing any component. */
 :root {
   color-scheme: dark;
-  --color-background: #0a0b0b;
-  --color-text: #f1f3f1;
-  --color-primary: #a9e6cd;
-  --color-secondary: #bbc4bf;
-  --color-accent: #40dda7;
-  --color-muted: #929b95;
-  --color-display: #989e9a;
-  --color-line: #29342e;
-  --color-overlay: #080b09;
+  --color-background: #07020c;
+  --color-text: #f9eefb;
+  --color-primary: #f3c6ed;
+  --color-secondary: #cbb8d2;
+  --color-accent: #ff4fb4;
+  --color-particle-secondary: #8d45df;
+  --color-muted: #a58baa;
+  --color-display: #ae9eb0;
+  --color-line: #48204e;
+  --color-overlay: #08020d;
 
   --font-heading: 'Manrope Variable', Arial, sans-serif;
   --font-body: 'Manrope Variable', Arial, sans-serif;

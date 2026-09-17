@@ -31,7 +31,7 @@ The default three-story experience is approximately `15.8H` for mouse and `25.32
 
 - `useIntro`: elapsed-time opening timeline. It waits for `document.fonts.ready`, animates intro words and count, reveals `[data-intro]` elements, then marks the shared clock ready.
 - `useJourney`: master paused GSAP timeline controlled by one scrubbed ScrollTrigger (`scrub: 0.7`). It owns hero departure, capability sequences, systems heading, panel entrances/exits, philosophy, contact reveal, active navigation, and scene accessibility.
-- `particle-scene`: renders generated portal points, star field, sampled brand motif, rotation, depth, and departure. It reads the shared clock but does not own scroll.
+- `particle-scene`: renders the full-screen field, sampled brand logo, pointer parallax, rotation, depth, and departure. It reads the shared clock but does not own scroll.
 - `MediaFrame`: owns slow alternate-media opacity cycling.
 
 ## Choreography contract
@@ -56,7 +56,11 @@ Recorded final representative states:
 
 ## Canvas motif
 
-The renderer samples only alpha from `brand.motif`, converts opaque pixels into deterministic seeded points with shallow depth, then renders those points using CSS theme colors. The source graphic must be square, transparent, centered, and have meaningful negative space.
+The renderer supports both transparent art and the supplied opaque JPEG. Transparent sources use alpha; opaque sources derive a background color from four corners and retain pixels sufficiently different from it. The retained logo pixels become deterministic seeded points with shallow depth and render in the logo-derived magenta, violet, and light theme.
+
+The old rectangular threshold is removed. A 760-point field spans the viewport from the opening frame. On fine-pointer devices, the logo anchor smoothly tracks the pointer across the complete viewport only while Home is active, with a small center-point edge inset; intentional particle clipping can occur at the edges. As Approach begins, tracking blends back to the original restrained parallax and scroll-defined composition used through Approach and Systems. When the pointer leaves the window, ownership eases back to the scroll-defined anchor. Pointer tracking is disabled for touch and reduced-motion users.
+
+Each Systems panel contains an original inline SVG explanation animated by its own scoped GSAP timeline: workflow convergence for Transformation, governed agent/tool coordination for Agentic Systems, and a monitored refinement loop for Managed Operations. Timelines clean up on unmount, stop when ambient motion is paused, and remain static under reduced motion.
 
 Performance rules:
 
@@ -64,6 +68,7 @@ Performance rules:
 - Draw with Canvas 2D; no 3D dependency is needed.
 - Use transform/opacity for DOM motion.
 - Paused/reduced states skip unchanged frames.
+- Direct pointer response can redraw while ambient time remains paused.
 - Canvas time delta is clamped and never negative.
 - Resize recalculates the surface, theme colors, and responsive scale.
 

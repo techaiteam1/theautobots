@@ -19,14 +19,26 @@ export function BrandMotif({ source, journey, clock, reduced }: Props) {
       let lastPaused = false;
       const tick = (time: number) => {
         const state = clock.current;
-        if ((!reduced && state.ready && !state.paused) || lastH !== state.h || lastPaused !== state.paused) scene.draw(time);
+        if ((!reduced && state.ready && (!state.paused || scene.interacting())) || lastH !== state.h || lastPaused !== state.paused) scene.draw(time);
         lastH = state.h;
         lastPaused = state.paused;
       };
       const resize = () => { scene.resize(); scene.draw(0); };
+      const pointerMove = (event: PointerEvent) => { if (event.pointerType !== 'touch') scene.pointer(event.clientX, event.clientY, true); };
+      const pointerLeave = () => scene.pointer(0, 0, false);
       gsap.ticker.add(tick);
       window.addEventListener('resize', resize);
-      cleanup = () => { gsap.ticker.remove(tick); window.removeEventListener('resize', resize); };
+      if (!reduced) {
+        window.addEventListener('pointermove', pointerMove, { passive: true });
+        document.addEventListener('pointerleave', pointerLeave);
+        window.addEventListener('blur', pointerLeave);
+      }
+      cleanup = () => {
+        gsap.ticker.remove(tick); window.removeEventListener('resize', resize);
+        window.removeEventListener('pointermove', pointerMove);
+        document.removeEventListener('pointerleave', pointerLeave);
+        window.removeEventListener('blur', pointerLeave);
+      };
     }).catch(() => { if (!disposed) setFallback(true); });
     return () => { disposed = true; cleanup(); };
   }, [source, journey, clock, reduced]);

@@ -44,6 +44,37 @@
 .media-frame { width: 100%; position: relative; overflow: hidden; }
 .media-frame > img { width: 100%; height: auto; object-fit: cover; }
 .media-frame .media-alternate { position: absolute; inset: 0; height: 100%; opacity: 0; }
+.system-visual-shell { width: 100%; aspect-ratio: 15 / 8; background: var(--color-overlay); }
+.system-visual { display: block; width: 100%; height: 100%; }
+.system-visual * { vector-effect: non-scaling-stroke; }
+.system-visual .visual-surface { fill: color-mix(in srgb, var(--color-background) 76%, var(--color-line)); }
+.system-visual .visual-grid { fill: none; stroke: var(--color-line); stroke-width: 1; opacity: 0.54; }
+.system-visual .visual-muted-lines,
+.system-visual .visual-agent-links { fill: none; stroke: var(--color-muted); stroke-width: 2; opacity: 0.75; }
+.system-visual .visual-primary { fill: none; stroke: var(--color-accent); stroke-width: 3; }
+.system-visual .visual-fine { fill: none; stroke: var(--color-primary); stroke-width: 1.5; }
+.system-visual .visual-core-fill { fill: var(--color-primary); stroke: none; }
+.system-visual .visual-nodes,
+.system-visual .visual-output-nodes,
+.system-visual .visual-agent-module,
+.system-visual .visual-operation-stages { fill: var(--color-background); stroke: var(--color-primary); stroke-width: 1.5; }
+.system-visual .visual-output-nodes { fill: var(--color-accent); stroke: var(--color-background); }
+.system-visual .visual-transform-scan { fill: none; stroke: var(--color-primary); stroke-width: 1; opacity: 0; }
+.system-visual .visual-corner-marks,
+.system-visual .visual-tool-nodes,
+.system-visual .visual-refinement { fill: none; stroke: var(--color-muted); stroke-width: 1.5; opacity: 0.75; }
+.system-visual .visual-agent-grid { opacity: 0.38; }
+.system-visual .visual-agent-links { stroke: var(--color-accent); }
+.system-visual .visual-agent-module path { fill: none; stroke: var(--color-muted); stroke-width: 1; }
+.system-visual .visual-agent-hub { fill: none; stroke: var(--color-primary); stroke-width: 1.5; }
+.system-visual .visual-orbit { stroke: var(--color-muted); stroke-dasharray: 3 6; opacity: 0.7; }
+.system-visual .visual-orbit-dots,
+.system-visual .visual-tool-nodes { fill: var(--color-accent); stroke: var(--color-background); stroke-width: 2; }
+.system-visual .visual-governance { fill: var(--color-background); stroke: var(--color-primary); stroke-width: 2; }
+.system-visual .visual-governance path:last-child { fill: none; stroke: var(--color-accent); stroke-width: 2.5; }
+.system-visual .visual-operations-loop { stroke-width: 4; }
+.system-visual .visual-operations-core { fill: color-mix(in srgb, var(--color-line) 34%, transparent); stroke: var(--color-muted); stroke-width: 1.5; }
+.system-visual .visual-signal { fill: none; stroke: var(--color-accent); stroke-width: 3; }
 .media-shade { position: absolute; inset: 35% 0 0; background: linear-gradient(transparent, color-mix(in srgb, var(--color-overlay) 84%, transparent) 45%, color-mix(in srgb, var(--color-overlay) 93%, transparent)); }
 .frame-corner { position: absolute; width: 17px; height: 17px; border-color: var(--color-accent); border-style: solid; opacity: 0.8; pointer-events: none; }
 .top-left { top: 0; left: 0; border-width: 1px 0 0 1px; }

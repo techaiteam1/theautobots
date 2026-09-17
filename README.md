@@ -27,7 +27,7 @@ npm run preview -- --port 4173
 
 Production preview: <http://127.0.0.1:4173/>. Deploy only `dist/` to a static host. The inspection and QA screenshots in `docs/` are not part of the build.
 
-Pushes to `main` automatically build and deploy through `.github/workflows/deploy-pages.yml`.
+Pushes to `develop` automatically build and deploy through `.github/workflows/deploy-pages.yml`. The `main` branch remains unchanged until changes are deliberately promoted.
 
 There is no backend, CMS, tracking, third-party API, or runtime font CDN dependency. Copying the email address uses the browser clipboard; the separate email link works without clipboard access. Clipboard access requires HTTPS or localhost.
 

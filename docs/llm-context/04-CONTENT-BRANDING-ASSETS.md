@@ -39,7 +39,8 @@ interface SystemStory {
   eyebrow: string;
   title: string;
   description: string;
-  media: string;
+  visual?: 'transformation' | 'agentic-systems' | 'managed-operations';
+  media?: string;
   alternateMedia?: string;
   alt: string;
   href?: string;
@@ -53,17 +54,17 @@ interface SystemStory {
 | Asset | Current status | Replacement guidance |
 | --- | --- | --- |
 | `public/brand/logo.svg` | Original temporary wordmark | Wide transparent SVG; header slot is about 142 x 25 px |
-| `public/brand/motif.svg` | Original linked-rail placeholder | Transparent centered square silhouette |
+| `public/brand/logo.jpeg` | Supplied Auto Bots logo; current particle source | Replace with an approved square logo image |
 | `public/brand/favicon.svg` | Original placeholder | Replace separately from logo |
 | `public/brand/social-preview.*` | Original placeholder, PNG is live metadata asset | Final PNG should remain 1200 x 630 |
-| `public/media/*.svg` | Original neutral concept studies | Replace with licensed/company media and useful alt text |
+| `src/components/SystemVisual.tsx` | Original animated service diagrams | Token-colored, GSAP-controlled, and replaceable per content item |
 | Self-hosted font files | OFL Manrope and Instrument Serif | Keep licenses for any replacement fonts |
 
-No reference-site image, logo, icon, illustration, font file, source code, or copy is licensed for production use.
+No reference-site image, logo, icon, illustration, font file, source code, or copy is licensed for production use. The magenta/violet theme and derived brand artwork come from the supplied Auto Bots logo.
 
 ## Media rules
 
-- Place public media under `public/media/` and configure `/media/name.ext` paths.
+- Choose a built-in animated diagram through an item's `visual` field, or place custom public media under `public/media/` and configure a `/media/name.ext` path instead.
 - Use `assetUrl()` when a component consumes a configurable public path.
 - Prefer correctly sized SVG, WebP, or AVIF. Current landscape targets are roughly 1.875:1 for first/third panels and 2.16:1 for the second.
 - Do not use random stock imagery just to fill a panel.

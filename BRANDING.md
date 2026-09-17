@@ -34,6 +34,7 @@ Edit the CSS custom properties in `src/styles/tokens.css`:
 - `--color-primary`: softer highlight color.
 - `--color-secondary`: supporting text/particles.
 - `--color-accent`: active navigation, particle motif, frame corners and focus feedback.
+- `--color-particle-secondary`: the violet half of the dotted logo and depth field.
 - `--color-muted`: small labels and hints.
 - `--color-line`: subtle separators.
 - `--color-overlay`: caption shading over desktop media.
@@ -74,14 +75,15 @@ Edit `siteContent.work.items`. Each story contains:
   eyebrow: 'Short optional context',
   title: 'Story title',
   description: 'A short, factual description.',
-  media: '/media/your-image.webp',
+  visual: 'transformation',
+  // Or replace `visual` with: media: '/media/your-image.webp',
   alt: 'Useful description of what the image communicates.',
   // alternateMedia: '/media/alternate-view.webp',
   // href: 'https://your-real-project.example'
 }
 ```
 
-An empty eyebrow is supported. Omit `href` for a display-only story. Internal destinations such as `#contact` use the scene navigation; external links use normal browser navigation. An optional `alternateMedia` crossfades slowly within the frame. Story count changes recalculate the journey length automatically.
+An empty eyebrow is supported. Omit `href` for a display-only story. Internal destinations such as `#contact` use the scene navigation; external links use normal browser navigation. Built-in visual choices are `transformation`, `agentic-systems`, and `managed-operations`. An optional `alternateMedia` crossfades slowly over custom media. Story count changes recalculate the journey length automatically.
 
 ## Change email and social links
 
@@ -91,15 +93,15 @@ Add full LinkedIn/Instagram URLs. Empty social values are omitted from the page;
 
 ## Replace images or media
 
-Place files in `public/media/`, then update the paths and alt text in `siteContent.work.items`. Keep paths in the form `/media/file.webp`; the application applies the deployment base automatically.
+The default Systems artwork consists of original inline SVG diagrams in `src/components/SystemVisual.tsx`. Choose a diagram with each item's `visual` field. Their color comes from `tokens.css`, and their GSAP motion automatically follows the global pause and reduced-motion settings.
 
-The present assets are original neutral studies, not client work. Use approximately 1080 px-wide media, with a landscape ratio around 1.875:1 for the first/third panels or 2.16:1 for the second. Alternate images should have identical dimensions. SVG, WebP, AVIF, PNG and JPEG work with the existing image frame. The current renderer is intentionally image-based; video would require a separately designed media control, not just renaming the file extension.
+To use custom media instead, remove `visual`, place the file in `public/media/`, and add a `/media/file.webp` path plus useful `alt` text. Use a landscape ratio around 1.875:1. SVG, WebP, AVIF, PNG and JPEG are supported. Video requires a separately designed accessible media control.
 
 ## Replace the animated motif
 
-Replace `public/brand/motif.svg`, or update `brand.motif`. Provide a centered, transparent square SVG or PNG with an opaque silhouette and clear negative space. The particle renderer samples its alpha and uses the theme colors, so the asset's embedded color is not its animation color.
+Replace `public/brand/logo.jpeg`, or update `brand.motif`. The current supplied JPEG contains the final Auto Bots mark and wordmark on a dark background. The renderer derives the background color from its corners, removes similar pixels, and converts the remaining artwork into magenta, violet, and light particles.
 
-The supplied interlocking rails are an original replaceable placeholder. Replacing the graphic does not require changing scroll timelines, scene positions, or the cursor layout. Avoid an all-opaque background, which would turn the motif into a square cloud.
+Transparent square SVG/PNG artwork is also supported through alpha sampling. Keep the artwork centered with clear negative space. Replacing the graphic does not require changing scroll timelines, scene positions, or pointer interaction.
 
 ## Change metadata and social artwork
 

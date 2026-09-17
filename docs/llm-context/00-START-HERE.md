@@ -24,7 +24,7 @@ This folder is the durable handoff context for humans and LLMs. It describes wha
 
 ## Experience in one paragraph
 
-The site is one continuous near-black viewport scene rather than a stack of SaaS sections. A loading sequence reveals an oversized fitted company name over a particle threshold. Scroll moves through a field of short capability phrases, a systems heading, three alternating media panels balanced by a rotating particle motif, an outro statement, and a quiet contact composition. Desktop retains peripheral typography and alternating panels; phones center panels in the lower viewport with captions below media. Reduced-motion mode becomes a readable native-flow document.
+The site is one continuous near-black violet viewport scene rather than a stack of SaaS sections. A loading sequence reveals an oversized fitted company name over a full-screen particle field and dotted Auto Bots logo. Scroll moves through short capability phrases, a systems heading, three alternating media panels balanced by the moving particle logo, an outro statement, and a quiet contact composition. On fine pointers the logo and field respond to the cursor. Desktop retains peripheral typography and alternating panels; phones center panels in the lower viewport with captions below media. Reduced-motion mode becomes a readable native-flow document.
 
 ## Read by task
 
@@ -65,7 +65,7 @@ Correct stale documentation in the same change. Never treat `dist/`, screenshots
 ## Current unresolved launch inputs
 
 - Purchase and confirm the domain, then set `brand.seo.siteUrl` to the final HTTPS origin.
-- Supply final logo, motif, social preview, and real company media if the temporary originals are not final.
+- Confirm the supplied `logo.jpeg`, derived favicon/social preview, and concept media as final launch assets.
 - Supply real LinkedIn and Instagram URLs; blank values are intentionally omitted.
 - Review editable copy before launch. There are no invented clients, metrics, results, or testimonials.
 - Test on physical iOS/Android devices and at least Safari/Firefox before a public launch.

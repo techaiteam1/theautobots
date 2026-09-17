@@ -25,9 +25,9 @@ Canvas supplies the needed depth and motif sampling at lower dependency and comp
 
 Brand identity, copy, and theme are isolated from presentation so future rebranding or CMS migration does not require redesigning the component tree or timelines.
 
-### D05: Original asset replacements
+### D05: Brand-owned asset replacements
 
-The reference is authority for composition and motion, not a source of production assets. The linked-rail motif and concept diagrams deliberately replace identifiable reference expression.
+The reference is authority for composition and motion, not a source of production assets. The supplied Auto Bots logo now drives the particle motif and palette; original concept diagrams replace identifiable reference expression.
 
 ### D06: Native-flow reduced-motion mode
 

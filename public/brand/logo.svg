@@ -1,5 +1,5 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 64" fill="#f1f3f1">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 64" fill="#f9eefb">
   <title>The Auto Bots — temporary wordmark</title>
-  <path d="M17 11 3 19v26l14 8V38l-5-3V24l14-8V6zM32 53l14-8V19l-14-8v15l5 3v11l-14 8v10z"/>
+  <path d="M5 37A20 20 0 0 1 32 12" fill="none" stroke="#ff4fb4" stroke-width="6" stroke-linecap="round"/><path d="M47 27A20 20 0 0 1 20 52" fill="none" stroke="#a864e8" stroke-width="6" stroke-linecap="round"/><circle cx="34" cy="20" r="6" fill="#ff70c3"/><circle cx="18" cy="45" r="6"/>
   <text x="66" y="40" font-family="Arial,sans-serif" font-size="27" font-weight="700" letter-spacing="4">THE AUTO BOTS</text>
 </svg>

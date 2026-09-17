@@ -3,7 +3,8 @@ export interface SystemStory {
   eyebrow: string;
   title: string;
   description: string;
-  media: string;
+  visual?: 'transformation' | 'agentic-systems' | 'managed-operations';
+  media?: string;
   alternateMedia?: string;
   alt: string;
   href?: string;
@@ -45,18 +46,17 @@ export const siteContent = {
       {
         id: 'transformation', eyebrow: '01 / Understand & transform', title: 'AI transformation',
         description: 'Rethink the workflow. Find where AI belongs in your business.',
-        media: '/media/transformation.svg', alt: 'Original study of separate paths finding a shared direction.',
+        visual: 'transformation', alt: 'Fragmented workflow paths converging through a transformation point into one clear operating flow.',
       },
       {
         id: 'agentic-systems', eyebrow: '02 / Connect & orchestrate', title: 'Custom agentic systems',
         description: 'Purpose-built agents, connected tools and intelligent workflows. Designed around the way you work.',
-        media: '/media/agentic-systems.svg', alternateMedia: '/media/agentic-systems-detail.svg',
-        alt: 'Original geometric study of connected, coordinated systems.',
+        visual: 'agentic-systems', alt: 'Specialized agents and tools coordinating through a central human-governed system.',
       },
       {
         id: 'managed-operations', eyebrow: '', title: 'Managed AI operations',
         description: 'Human oversight. Continuous refinement. A path from individual workflows to AI operating infrastructure.',
-        media: '/media/operations.svg', alt: 'Original study of repeated structures forming a coherent whole.',
+        visual: 'managed-operations', alt: 'A monitored operational loop continuously observing, governing and refining AI workflows.',
         href: '#contact',
       },
     ] satisfies SystemStory[],

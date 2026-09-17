@@ -1,10 +1,12 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630">
-  <rect width="1200" height="630" fill="#0a0b0b"/>
-  <g fill="none" stroke="#a9e6cd" stroke-width="5" opacity=".6" transform="translate(450 80)">
-    <path d="M167 48 78 100 78 211 132 242 132 182 112 170 112 119 167 87Z"/>
-    <path d="M133 252 222 200 222 89 168 58 168 118 188 130 188 181 133 213Z"/>
+  <rect width="1200" height="630" fill="#07020c"/>
+  <g transform="translate(510 56)">
+    <path d="M5 132A105 105 0 0 1 145 18" fill="none" stroke="#ff4fb4" stroke-width="24" stroke-linecap="round"/>
+    <path d="M177 82A105 105 0 0 1 37 196" fill="none" stroke="#a864e8" stroke-width="24" stroke-linecap="round"/>
+    <circle cx="146" cy="55" r="30" fill="#ff70c3"/><circle cx="36" cy="159" r="30" fill="#f9eefb"/>
+    <path d="m58 142 35-29 15-28 27-17" fill="none" stroke="#f9eefb" stroke-width="6"/>
   </g>
-  <text x="600" y="377" text-anchor="middle" fill="#f1f3f1" font-family="Arial,sans-serif" font-size="100" font-weight="700" letter-spacing="4">THE AUTO BOTS</text>
-  <text x="600" y="445" text-anchor="middle" fill="#bbc4bf" font-family="Georgia,serif" font-size="29" font-style="italic">Transform · Operate · Evolve</text>
-  <path d="M48 570h1104" stroke="#29342e"/>
+  <text x="600" y="385" text-anchor="middle" fill="#f9eefb" font-family="Arial,sans-serif" font-size="100" font-weight="700" letter-spacing="4">THE AUTO BOTS</text>
+  <text x="600" y="453" text-anchor="middle" fill="#cbb8d2" font-family="Georgia,serif" font-size="29" font-style="italic">Transform · Operate · Evolve</text>
+  <path d="M48 570h1104" stroke="#48204e"/>
 </svg>

@@ -93,3 +93,19 @@ GitHub Pages deployment run `35084959426` completed successfully on 16 September
 - Desktop 1440x900 and mobile 390x844 Chromium smoke tests reported no browser, console, or failed-request errors.
 - Both deployed viewports completed the intro, rendered the Canvas scene, opened the menu, and had no horizontal overflow.
 - The Pages workflow runs on every push to `main` and can also be started manually.
+
+## Logo-particle redesign verification
+
+Verified locally against the production build before deployment on 16 September 2026:
+
+- Removed the rectangular opening threshold and confirmed a full-viewport particle field at desktop and mobile sizes.
+- Sampled the supplied `logo.jpeg` into a dotted logo without rendering its opaque JPEG background as a square.
+- Confirmed pointer movement changes the Canvas logo/field while ambient time is paused; the Canvas becomes byte-stable again after pointer settling.
+- Confirmed the sampled logo follows fine-pointer movement from the upper-left to lower-right viewport regions and remains non-interactive behind page content.
+- Confirmed full-viewport logo following ends before Approach; Systems retains alternating opposite-side placement even when the pointer is forced toward the active card.
+- Confirmed all three Systems diagrams render and animate without missing resources, console errors, or overflow at 1440 x 900 and 390 x 844.
+- Confirmed the Systems SVG timelines change while motion is enabled and become byte-stable after Pause Motion is selected.
+- Recolored theme tokens, concept illustrations, favicon, wordmark, and social preview to the logo-derived magenta/violet palette.
+- All eight required viewport runs passed without console errors or horizontal overflow.
+- All 18 built files returned HTTP 200 and matched disk; focus trapping, reduced motion, pause behavior, story media, and long-name fitting passed.
+- The final 120-frame headless diagnostic measured a 16.67 ms mean interval, 16.8 ms p95, and zero intervals above 50 ms. This remains a local diagnostic rather than a physical-device guarantee.

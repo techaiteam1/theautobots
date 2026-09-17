@@ -5,7 +5,7 @@ export const brand = {
   logo: '/brand/logo.svg',
   // The quiet text identity matches the reference. Switch to "image" for your logo.
   logoMode: 'text' as 'text' | 'image',
-  motif: '/brand/motif.svg',
+  motif: '/brand/logo.jpeg',
   contact: {
     email: 'theautobots.ai@gmail.com',
     linkedin: '',

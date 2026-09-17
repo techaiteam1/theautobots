@@ -40,4 +40,4 @@ Append concise dated entries for changes that alter behavior, architecture, conf
 - Limited full-viewport logo tracking to Home and restored restrained pointer parallax from Approach onward.
 - Replaced static geometric studies with three original token-colored inline SVG diagrams that explain transformation, agent orchestration, and managed operations.
 - Added scoped GSAP diagram timelines integrated with Pause Motion and reduced-motion behavior.
-- Moved automatic GitHub Pages deployment to the `develop` branch while leaving `main` unchanged.
+- Moved automatic GitHub Pages deployment to the `develop` branch and its dedicated `github-pages-develop` environment while leaving `main` unchanged.

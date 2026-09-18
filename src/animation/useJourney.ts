@@ -14,7 +14,9 @@ export function useJourney(root: RefObject<HTMLDivElement | null>, journey: Jour
     }
     const positions: Record<string, number> = {
       home: 0, approach: journey.about + 0.1 * journey.pace,
-      systems: journey.work + 0.3 * journey.pace, contact: journey.contact,
+      workflow: journey.bridge, systems: journey.work + 0.3 * journey.pace,
+      operations: journey.operations, fit: journey.fit,
+      contact: journey.contact,
     };
     focusDestination.current = focus ? id : null;
     window.scrollTo({ top: (positions[id] ?? 0) * innerHeight, behavior: 'instant' });
@@ -38,7 +40,10 @@ export function useJourney(root: RefObject<HTMLDivElement | null>, journey: Jour
     let lastActive = '';
     const updateAccess = (h: number) => {
       const current: SectionId = h >= journey.contact - 0.7 ? 'contact'
+        : h >= journey.fit - 0.35 * journey.pace ? 'fit'
+        : h >= journey.operations - 0.35 * journey.pace ? 'operations'
         : h >= journey.heading - 0.5 * journey.pace ? 'systems'
+        : h >= journey.bridge - 0.35 * journey.pace ? 'workflow'
         : h >= journey.about - 0.4 * journey.pace ? 'approach' : 'home';
       if (lastActive !== current) {
         lastActive = current;
@@ -76,6 +81,14 @@ export function useJourney(root: RefObject<HTMLDivElement | null>, journey: Jour
           timeline.to(word, { autoAlpha: 0, y: part ? -20 : -30, filter: 'blur(8px)', duration: 0.2 * journey.pace, ease: 'power1.in' }, at + 0.38 * journey.pace);
         });
       });
+      timeline.set('.bridge-stage', { autoAlpha: 1 }, journey.bridge - 0.35 * journey.pace);
+      timeline.fromTo('.bridge-inner', { autoAlpha: 0, y: 36, filter: 'blur(10px)' },
+        { autoAlpha: 1, y: 0, filter: 'blur(0px)', duration: 0.45 * journey.pace, ease: 'settle' }, journey.bridge - 0.22 * journey.pace);
+      element.querySelectorAll('.bridge-markers span').forEach((marker, index) => {
+        timeline.fromTo(marker, { autoAlpha: 0, y: 18 }, { autoAlpha: 1, y: 0, duration: 0.24 * journey.pace, ease: 'settle' }, journey.bridge + (0.12 + index * 0.08) * journey.pace);
+      });
+      timeline.to('.bridge-inner', { autoAlpha: 0, y: -24, filter: 'blur(8px)', duration: 0.4 * journey.pace, ease: 'settle' }, journey.bridgeEnd - 0.35 * journey.pace);
+      timeline.set('.bridge-stage', { autoAlpha: 0 }, journey.bridgeEnd);
       timeline.set('.systems-stage', { autoAlpha: 1 }, journey.heading - 0.5 * journey.pace);
       timeline.fromTo('.stage-heading', { autoAlpha: 0, y: 22, filter: 'blur(8px)' },
         { autoAlpha: 1, y: 0, filter: 'blur(0px)', duration: 0.25 * journey.pace, ease: 'settle' }, journey.heading - 0.5 * journey.pace);
@@ -89,6 +102,19 @@ export function useJourney(root: RefObject<HTMLDivElement | null>, journey: Jour
       timeline.fromTo('.philosophy-line', { autoAlpha: 0, y: 20, filter: 'blur(8px)' },
         { autoAlpha: 1, y: 0, filter: 'blur(0px)', duration: 0.35, ease: 'settle' }, journey.outro + 0.05);
       timeline.to('.philosophy-line', { autoAlpha: 0, y: -15, filter: 'blur(8px)', duration: 0.35 }, journey.outro + 0.65);
+      timeline.set('.operations-stage', { autoAlpha: 1 }, journey.operations - 0.35 * journey.pace);
+      timeline.fromTo('.operations-inner', { autoAlpha: 0, y: 34, filter: 'blur(8px)' },
+        { autoAlpha: 1, y: 0, filter: 'blur(0px)', duration: 0.45 * journey.pace, ease: 'settle' }, journey.operations - 0.25 * journey.pace);
+      element.querySelectorAll('.control-rail span').forEach((control, index) => {
+        timeline.fromTo(control, { autoAlpha: 0, x: -18 }, { autoAlpha: 1, x: 0, duration: 0.24 * journey.pace, ease: 'settle' }, journey.operations + (0.2 + index * 0.11) * journey.pace);
+      });
+      timeline.to('.operations-inner', { autoAlpha: 0, y: -24, filter: 'blur(8px)', duration: 0.45 * journey.pace, ease: 'settle' }, journey.fit - 0.65 * journey.pace);
+      timeline.set('.operations-stage', { autoAlpha: 0 }, journey.fit - 0.25 * journey.pace);
+      timeline.set('.fit-stage', { autoAlpha: 1 }, journey.fit - 0.35 * journey.pace);
+      timeline.fromTo('.fit-inner', { autoAlpha: 0, y: 34, filter: 'blur(8px)' },
+        { autoAlpha: 1, y: 0, filter: 'blur(0px)', duration: 0.45 * journey.pace, ease: 'settle' }, journey.fit - 0.2 * journey.pace);
+      timeline.to('.fit-inner', { autoAlpha: 0, y: -24, filter: 'blur(8px)', duration: 0.45 * journey.pace, ease: 'settle' }, journey.contact - 0.75 * journey.pace);
+      timeline.set('.fit-stage', { autoAlpha: 0 }, journey.contact - 0.35 * journey.pace);
       timeline.set('.contact-stage', { autoAlpha: 1 }, journey.contact - 0.7);
       const contactEntrance = gsap.fromTo('.contact-inner', { opacity: 0, y: 32, filter: 'blur(8px)' },
         { opacity: 1, y: 0, filter: 'blur(0px)', duration: 1, ease: 'settle', paused: true });

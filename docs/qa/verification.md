@@ -1,5 +1,22 @@
 # Production verification
 
+## 18 September 2026 larger motion narrative
+
+- `npm run lint`: passed ESLint and strict TypeScript checks.
+- `npm run build`: passed; production assets emitted to `dist/`.
+- Full eight-viewport `verify-site.cjs` run passed against `http://127.0.0.1:4175/`.
+- `verify-details.cjs` passed: 14 assets matched disk, focus trap passed, pause and reduced-motion canvas checks were static, and reduced-mode image checks had no failures.
+- Browser QA reported no console/page errors, no horizontal overflow, successful email copy, menu Escape returning `false`, and identity navigation returning to scroll position zero for every viewport.
+
+## 18 September 2026 revenue-operations expansion
+
+- `npm run lint`: passed ESLint and strict TypeScript checks.
+- `npm run build`: passed; production assets emitted to `dist/`.
+- Full eight-viewport `verify-site.cjs` run passed against `http://127.0.0.1:4175/` after the documented preview port was occupied.
+- `verify-details.cjs` passed: 14 assets matched disk, focus trap passed, pause and reduced-motion canvas checks were static, and reduced-mode image checks had no failures.
+- The verifier now derives the Systems panel count from the DOM and captures the added offer state before Contact.
+- Browser QA reported no console/page errors, no horizontal overflow, successful email copy, menu Escape returning `false`, and identity navigation returning to scroll position zero for every viewport.
+
 Verified 16 September 2026 against the Vite production preview in Chromium. Reference measurements and screenshots were collected separately on 15 September; see [reference-analysis.md](../reference-analysis.md).
 
 ## Results

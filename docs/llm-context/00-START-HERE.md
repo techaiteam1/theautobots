@@ -24,7 +24,7 @@ This folder is the durable handoff context for humans and LLMs. It describes wha
 
 ## Experience in one paragraph
 
-The site is one continuous near-black violet viewport scene rather than a stack of SaaS sections. A loading sequence reveals an oversized fitted company name over a full-screen particle field and dotted Auto Bots logo. Scroll moves through short capability phrases, a systems heading, three alternating media panels balanced by the moving particle logo, an outro statement, and a quiet contact composition. On fine pointers the logo and field respond to the cursor. Desktop retains peripheral typography and alternating panels; phones center panels in the lower viewport with captions below media. Reduced-motion mode becomes a readable native-flow document.
+The site is one continuous near-black violet viewport scene rather than a stack of SaaS sections. A loading sequence reveals an oversized fitted company name over a full-screen particle field and dotted Auto Bots logo. Scroll moves through short capability phrases, a workflow-mapping bridge, a systems heading, four alternating revenue-operations panels balanced by the moving particle logo, an operating-controls scene, an ideal-fit scene, and a quiet contact composition. On fine pointers the logo and field respond to the cursor. Desktop retains peripheral typography and alternating panels; phones center panels in the lower viewport with captions below media. Reduced-motion mode becomes a readable native-flow document.
 
 ## Read by task
 

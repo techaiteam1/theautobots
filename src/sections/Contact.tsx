@@ -14,14 +14,15 @@ export function Contact({ paused, togglePause }: { paused: boolean; togglePause:
     clearMessage.current = gsap.delayedCall(3, () => setMessage(''));
   };
   const socials = (['linkedin', 'instagram'] as const).filter(key => brand.contact[key]);
+  const bookingUrl = brand.contact.bookingUrl.trim();
   return <>
-    <p className="philosophy-line">{siteContent.philosophy.statement}</p>
     <section className="stage contact-stage" id="contact" data-section="contact" tabIndex={-1} aria-labelledby="contact-title">
       <div className="contact-inner">
         <h2 id="contact-title">{siteContent.contact.invitation}</h2>
         <button className="contact-address" type="button" onClick={() => void copy()} aria-describedby="copy-feedback">{brand.contact.email}</button>
         <p id="copy-feedback" className="copy-feedback" aria-live="polite">{message || siteContent.contact.copyHint}</p>
         <div className="contact-links">
+          {bookingUrl && <a href={bookingUrl} target="_blank" rel="noopener noreferrer">{siteContent.contact.book}<span aria-hidden="true"> ↗</span></a>}
           <a href={`mailto:${brand.contact.email}`}>{siteContent.contact.send}<span aria-hidden="true"> ↗</span></a>
           {socials.map(key => <a key={key} href={brand.contact[key]} target="_blank" rel="noopener noreferrer">{siteContent.contact.socialLabels[key]}</a>)}
         </div>

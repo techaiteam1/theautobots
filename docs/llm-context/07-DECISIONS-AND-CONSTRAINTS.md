@@ -41,6 +41,14 @@ The implementation adds a restrained modal menu because touch and keyboard acces
 
 The planned custom domain is not owned, so it must not appear in canonical metadata. The confirmed GitHub Pages deployment is the current canonical. Replace it only after an owned custom domain is connected and serving HTTPS.
 
+### D09: Revenue-operations content expansion without SaaS layout
+
+The homepage now uses the agency/service-firm revenue-operations positioning and four sequential system panels plus one sparse offer scene. This expands the content capacity while preserving the continuous fixed-stage composition, one-focus-at-a-time rhythm, and no pricing/table/testimonial conventions.
+
+### D10: Larger narrative as staged motion beats
+
+The expanded homepage narrative adds workflow mapping, operating controls, and ideal-fit scenes as timed motion beats rather than conventional content sections. These scenes may carry more message density, but each remains a single focal composition with no cards, grids, pricing, testimonials, or dashboard-style drift.
+
 ## Hard constraints
 
 - No copied reference HTML, CSS, JavaScript, components, bundles, copy, imagery, logo, icon, illustration, proprietary font, or downloadable asset.

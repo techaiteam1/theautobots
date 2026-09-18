@@ -16,21 +16,25 @@ For `count` stories:
 ```text
 about      = 1 + 2*pace + 0.1
 aboutEnd   = about + 3.3*pace
-heading    = aboutEnd + 0.5*pace
+bridge     = aboutEnd + 0.65*pace
+bridgeEnd  = bridge + 1.45*pace
+heading    = bridgeEnd + 0.55*pace
 work       = heading + 0.4
-panelLength= 1.8*pace
+panelLength= 1.75*pace
 workEnd    = work + count*panelLength
 outro      = workEnd + 0.7*pace
-contact    = outro + 1.4
+operations = outro + 1.1*pace
+fit        = operations + 1.65*pace
+contact    = fit + 1.8*pace
 total      = contact + 1
 ```
 
-The default three-story experience is approximately `15.8H` for mouse and `25.32H` for touch, matching the reference's measured rhythm.
+The default four-story experience is approximately `22.7H` for mouse and `38.86H` for touch. The larger narrative preserves the reference's measured rhythm while giving workflow mapping, operating controls, and ideal-fit content their own sparse scenes.
 
 ## Timeline ownership
 
 - `useIntro`: elapsed-time opening timeline. It waits for `document.fonts.ready`, animates intro words and count, reveals `[data-intro]` elements, then marks the shared clock ready.
-- `useJourney`: master paused GSAP timeline controlled by one scrubbed ScrollTrigger (`scrub: 0.7`). It owns hero departure, capability sequences, systems heading, panel entrances/exits, philosophy, contact reveal, active navigation, and scene accessibility.
+- `useJourney`: master paused GSAP timeline controlled by one scrubbed ScrollTrigger (`scrub: 0.7`). It owns hero departure, capability sequences, workflow bridge, systems heading, panel entrances/exits, philosophy, operations, fit, contact reveal, active navigation, and scene accessibility.
 - `particle-scene`: renders the full-screen field, sampled brand logo, pointer parallax, rotation, depth, and departure. It reads the shared clock but does not own scroll.
 - `MediaFrame`: owns slow alternate-media opacity cycling.
 
@@ -38,9 +42,11 @@ The default three-story experience is approximately `15.8H` for mouse and `25.32
 
 - Hero exits across `0.3H`, remaining spatially fixed while opacity dissolves.
 - Capability words combine blur, vertical travel, opacity, and staged primary/detail timing. They enter around the motif and leave before the next group.
+- A workflow-mapping bridge enters after Approach, stages its path markers, then clears before Systems.
 - Systems heading arrives with blur/y settle and clears before the first panel.
 - Each panel enters from `y: 60`, holds, then exits to `y: -30`; the strong-out custom ease produces a quick move and long settle.
-- Panels alternate left/right/left based on item index. The motif shifts to the opposing side.
+- Panels alternate left/right based on item index. The motif shifts to the opposing side.
+- After Systems, a short philosophy line clears into operating-controls and ideal-fit scenes before the final contact reveal.
 - Contact is an elapsed one-second blur/y reveal triggered near the final scene rather than an endless scroll fade.
 - Motion should express transition and focus, not decorate every element.
 

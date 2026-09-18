@@ -100,7 +100,7 @@ export function createParticleScene(canvas: HTMLCanvasElement, points: Point[], 
     if (Math.abs(pointerPresence - pointerPresenceTarget) < 0.015) pointerPresence = pointerPresenceTarget;
     const h = reduced ? 0 : clock.h;
     const travel = smooth(h / (1 + 2 * journey.pace));
-    const departure = smooth((h - journey.outro) / 1.4);
+    const departure = smooth((h - journey.fit) / 1.4);
     context.clearRect(0, 0, width, height);
 
     // A full-viewport field replaces the old rectangular threshold from the first frame onward.

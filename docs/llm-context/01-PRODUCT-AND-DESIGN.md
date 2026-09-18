@@ -30,7 +30,7 @@ Preserve these characteristics:
 - Italic editorial serif for emotional headings and transitions.
 - A narrow opening threshold that expands into a spatial particle scene.
 - Peripheral capability words that avoid the center.
-- Three media displays shown sequentially, alternating left/right/left.
+- Sequential media displays shown one at a time, alternating left/right.
 - The motif on the opposite side of each desktop/tablet panel.
 - Sparse centered contact treatment and quiet footer.
 - Measured stillness between events; effects should not compete.

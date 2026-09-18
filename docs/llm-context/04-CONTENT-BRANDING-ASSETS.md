@@ -9,8 +9,8 @@ last_verified: 2026-09-16
 
 ## Single sources of truth
 
-- `src/config/brand.ts`: company name, tagline, logo mode/path, motif path, email, social URLs, and SEO.
-- `src/content/site-content.ts`: all visible business copy, navigation labels, capabilities, and system stories.
+- `src/config/brand.ts`: company name, tagline, logo mode/path, motif path, email, booking URL, social URLs, and SEO.
+- `src/content/site-content.ts`: all visible business copy, navigation labels, capabilities, system stories, workflow bridge, operating-controls copy, fit copy, and contact copy.
 - `src/styles/tokens.css`: colors, typography roles, spacing, z-index, and easing variables.
 
 Normal rebranding must not require component or animation edits. The complete operator instructions are in root [BRANDING.md](../../BRANDING.md).
@@ -19,8 +19,9 @@ Normal rebranding must not require component or animation edits. The complete op
 
 ```text
 Company: The Auto Bots
-Tagline: Transform · Operate · Evolve
+Tagline: Transform - Operate - Evolve
 Email: theautobots.ai@gmail.com
+Booking URL: unset and omitted
 LinkedIn: unset and omitted
 Instagram: unset and omitted
 Planned domain: theautobots.ai, unpurchased

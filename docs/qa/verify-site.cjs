@@ -30,8 +30,12 @@ async function geometry(page) {
    const snapshots=[];
    const capture=async name=>{await page.screenshot({path:path.join(out,`${width}x${height}-${name}.png`)});snapshots.push({name,...await geometry(page)});};
    await capture('hero');
-   const pace=touch?1.8:1,about=1+2*pace+.1,work=about+3.3*pace+.5*pace+.4,contact=work+3*1.8*pace+.7*pace+1.4;
-   for(const [name,h] of [['traversal',1.5*pace],['approach',about+1.5*pace],['system-1',work+.3*pace],['system-2',work+2.1*pace],['system-3',work+3.9*pace],['contact',contact]]){
+   const count=await page.locator('.system-panel').count();
+   const pace=touch?1.8:1,about=1+2*pace+.1,aboutEnd=about+3.3*pace,bridge=aboutEnd+.65*pace,bridgeEnd=bridge+1.45*pace,heading=bridgeEnd+.55*pace,work=heading+.4,panelLength=1.75*pace,workEnd=work+count*panelLength,outro=workEnd+.7*pace,operations=outro+1.1*pace,fit=operations+1.65*pace,contact=fit+1.8*pace;
+   const states=[['traversal',1.5*pace],['approach',about+1.5*pace],['workflow',bridge]];
+   for(let i=0;i<count;i++)states.push([`system-${i+1}`,work+(i*panelLength)+.3*pace]);
+   states.push(['operations',operations],['fit',fit],['contact',contact]);
+   for(const [name,h] of states){
     await page.evaluate(y=>scrollTo({top:y,behavior:'instant'}),h*height);await page.waitForTimeout(1400);await capture(name);
    }
    await page.locator('.contact-address').click();await page.waitForTimeout(100);

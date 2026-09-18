@@ -12,6 +12,7 @@ import { useMediaQuery } from '../hooks/useMediaQuery';
 import { Hero } from '../sections/Hero';
 import { Approach } from '../sections/Approach';
 import { Systems } from '../sections/Systems';
+import { BridgeScene, FitScene, OperationsScene } from '../sections/NarrativeScenes';
 import { Contact } from '../sections/Contact';
 
 export default function App() {
@@ -32,7 +33,8 @@ export default function App() {
     <Navigation active={active} navigate={navigate} reduced={reduced} paused={paused} togglePause={togglePause} />
     <div className="scroll-track" aria-hidden="true" />
     <main id="main-content">
-      <Hero navigate={navigate} /><Approach /><Systems reduced={reduced} paused={paused} navigate={navigate} />
+      <Hero navigate={navigate} /><Approach /><BridgeScene /><Systems reduced={reduced} paused={paused} navigate={navigate} />
+      <OperationsScene /><FitScene />
       <Contact paused={paused} togglePause={togglePause} />
     </main>
     <Intro />
